@@ -27,12 +27,12 @@ namespace ProductsManagement.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(InsertProductCommand command) {
+        public async Task<IActionResult> Post([FromBody]InsertProductCommand command) {
             return Ok(await _service.InsertProduct(command));
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(UpdateProductCommand command) {
+        public async Task<IActionResult> Put([FromBody]UpdateProductCommand command) {
             return Ok(await _service.UpdateProduct(command));
         }
 
